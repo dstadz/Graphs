@@ -31,6 +31,22 @@ class Graph:
         """
         q = Queue()
         q.enqueue(starting_vertex)
+        # Mark all the vertices as not visited
+        visited = [False] * (len(self.vertices))
+        # Mark the source node as
+        # visited and enqueue it
+        visited[starting_vertex] = True
+        while q:
+            s = q.dequeue()
+            print (s, end = " ")
+            # Get all adjacent vertices of the
+            # dequeued vertex s. If a adjacent
+            # has not been visited, then mark it
+            # visited and enqueue it
+            for i in self.vertices[starting_vertex]:
+                if visited[i] == False:
+                    q.enqueue(i)
+                    visited[i] = True
 
     def dft(self, starting_vertex):
         """
