@@ -23,7 +23,7 @@ def earliest_ancestor(ancestors, starting_node):
         if type(cur) is int:
             depth += 1
             if family.get_parents(cur) is -1:
-                oldest.append((depth,cur))
+                oldest.append({cur:depth})
                 continue
             grands.append(family.get_parents(cur))
         print(f'oldest is {oldest}')
@@ -37,7 +37,7 @@ def earliest_ancestor(ancestors, starting_node):
 
 
 # If more than one ancestor tied for "earliest", return lowest numeric ID.
-    # return min(oldest)
+    return min(oldest)
 
 class Graph:
     def __init__(self):
