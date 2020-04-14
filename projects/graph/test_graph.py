@@ -37,7 +37,6 @@ class Test(unittest.TestCase):
           7: {1, 6}
         }
         self.assertDictEqual(self.graph.vertices, vertices)
-
     def test_bft(self):
         bft = [
             "1\n2\n3\n4\n5\n6\n7\n",
@@ -114,6 +113,5 @@ class Test(unittest.TestCase):
             [1, 2, 4, 7, 6]
         ]
         self.assertIn(self.graph.dfs_recursive(1,6), dfs)
-
 if __name__ == '__main__':
     unittest.main()
